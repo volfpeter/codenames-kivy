@@ -1,0 +1,12 @@
+<CodenamesTableWidget>:
+    canvas.before:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgba: (0.1, 0.1, 0.1, 1)
+        Rectangle:
+            pos: (self.x + 9, self.y + 9)
+            size: (self.width - 18, self.height - 18)

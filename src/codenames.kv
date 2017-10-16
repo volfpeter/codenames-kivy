@@ -1,0 +1,66 @@
+#:import RatioFixedWidget ratiofixedwidget.RatioFixedWidget
+#:import rgba kivy.utils.rgba
+
+Widget:
+    canvas.before:
+        Color:
+            rgba: rgba("#263238")
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    size_hint: (1, 1)
+
+    Widget:
+        pos: ("5dp", "5dp")
+        width: root.width - dp(10)
+        height: root.height - dp(10)
+
+        RatioFixedWidget:
+            ratio: 1.2
+            width: self.parent.width * 0.7 - dp(5)
+            height: self.parent.height
+
+            CodenamesTableWidget:
+                id: table
+                size: self.parent.effective_size
+                x: (self.parent.width - self.width) * 0.5 + dp(7.5)
+                y: (self.parent.height - self.height) * 0.5 + dp(5)
+
+        BoxLayout:
+            orientation: "vertical"
+            spacing: "5dp"
+            width: self.parent.width * 0.3 - dp(10)
+            height: self.parent.height
+            pos: (self.parent.width * 0.7 + dp(10), 0)
+
+            Widget:
+                size_hint: (1, 1)
+            Button:
+                height: "25dp"
+                size_hint: (1, None)
+                text: "New table"
+                on_press: table.randomize()
+            Button:
+                height: "25dp"
+                size_hint: (1, None)
+                text: "New word"
+                on_press: app.new_random_word()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 1)
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                color: (0, 0, 0, 1)
+                font_size: "20dp"
+                halign: "center"
+                shorten: True
+                size_hint: (1, None)
+                text: app.word
+                text_size: self.size
+                valign: "middle"
+            Widget:
+                size_hint: (1, 1)
