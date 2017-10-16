@@ -38,7 +38,7 @@ class CodenamesApp(App):
             self.word = random.choice(word_list)
 
     def _load_word_list(self):
-        word_list_file = "wordlist.wl"
+        word_list_file = "wordlist.txt"
         if not os.path.isfile(word_list_file):
             return
 

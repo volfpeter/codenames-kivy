@@ -16,10 +16,10 @@ The application needs a word list to be able to suggest words randomly to you
 so you can set up a board. Some word lists are included in this project, see
 the wordlists_ directory.
 
-The application will read words from the ``wordlist.wl`` file that is next to
+The application will read words from the ``wordlist.txt`` file that is next to
 the source files. This word list file is empty by default, it's up to you to
 fill it with words by either copying the content of one of the included word
-list files to ``wordlist.wl`` or by acquiring a word list from some other source.
+list files to ``wordlist.txt`` or by acquiring a word list from some other source.
 
 How to run
 ===============
