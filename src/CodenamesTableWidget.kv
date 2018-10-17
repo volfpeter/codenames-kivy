@@ -1,3 +1,7 @@
+#:kivy 1.10
+
+#:import Styles styles.Styles
+
 <CodenamesTableWidget>:
     canvas.before:
         Color:
@@ -6,7 +10,7 @@
             pos: self.pos
             size: self.size
         Color:
-            rgba: (0.1, 0.1, 0.1, 1)
+            rgba: Styles.BORDER
         Rectangle:
             pos: (self.x + 9, self.y + 9)
             size: (self.width - 18, self.height - 18)

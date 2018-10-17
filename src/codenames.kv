@@ -1,10 +1,12 @@
+#:kivy 1.10
+
 #:import RatioFixedWidget ratiofixedwidget.RatioFixedWidget
-#:import rgba kivy.utils.rgba
+#:import Styles styles.Styles
 
 Widget:
     canvas.before:
         Color:
-            rgba: rgba("#263238")
+            rgba: Styles.BACKGROUND
         Rectangle:
             size: self.size
             pos: self.pos
@@ -36,12 +38,47 @@ Widget:
 
             Widget:
                 size_hint: (1, 1)
+            Label:
+                canvas.before:
+                    Color:
+                        rgba: Styles.BACKGROUND
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                color: Styles.TEXT
+                height: "25dp"
+                size_hint: (1, None)
+                halign: "center"
+                valign: "middle"
+                shorten: True
+                text: "Select word list:"
+                text_size: self.size
+            Spinner:
+                id: wordlist_selector
+                background_normal: ""
+                background_color: Styles.TEXT
+                color: Styles.BACKGROUND
+                height: "25dp"
+                size_hint: (1, None)
+                sync_height: True
+                text: app.wordlist_name
+                values: app.WORDLIST_NAMES
+                on_text: app.wordlist_name = wordlist_selector.text
+            Widget:
+                size_hint: (1, 1)
             Button:
+                background_normal: ""
+                background_color: Styles.TEXT
+                color: Styles.BACKGROUND
                 height: "25dp"
                 size_hint: (1, None)
                 text: "New table"
                 on_press: table.randomize()
             Button:
+                background_normal: ""
+                background_color: Styles.TEXT
+                color: Styles.BACKGROUND
                 height: "25dp"
                 size_hint: (1, None)
                 text: "New word"
@@ -49,12 +86,12 @@ Widget:
             Label:
                 canvas.before:
                     Color:
-                        rgba: (1, 1, 1, 1)
+                        rgba: Styles.BACKGROUND
                     Rectangle:
                         pos: self.pos
                         size: self.size
 
-                color: (0, 0, 0, 1)
+                color: Styles.TEXT
                 font_size: "20dp"
                 halign: "center"
                 shorten: True

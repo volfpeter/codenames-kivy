@@ -12,12 +12,6 @@ First of all, you need to [install the Kivy project](https://kivy.org/#download)
 
 When everything is in place, you can start the application by executing `main.py` using Python 3: `python main.py` or `python3 main.py`.
 
-## Word lists
-
-The application needs a word list to be able to suggest words randomly to you so you can set up a board. Some word lists are included in this project (nouns listed on Wikipedia), see the [wordlists](./wordlists) directory.
-
-The application will read words from the `wordlist.txt` file that is next to the application. This word list file is empty by default, it's up to you to fill it with words by either copying the content of one of the included word files to `wordlist.txt` or by acquiring a word list from some other source.
-
 ## Legal notice
 
 This code has been open sourced after written permission from the [publisher](https://czechgames.com/en/), Czech Games Edition.
