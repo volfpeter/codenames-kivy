@@ -1,0 +1,4 @@
+pyinstaller -y --clean --windowed MacOSCodenames.spec
+pushd dist
+hdiutil create ./Codenames.dmg -srcfolder Codenames.app -ov
+popd
